@@ -1,114 +1,101 @@
 import Image from "next/image";
-import { Geist, Geist_Mono } from "next/font/google";
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
+import Header from '../components/header.js';
+import Navbar from '../components/navbar.js';
+import LatestArticles from "@/components/articles.js";
+import Footer from "@/components/footer.js";
 
 export default function Home() {
   return (
-    <div
-      className={`${geistSans.variable} ${geistMono.variable} grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]`}
-    >
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              src/pages/index.js
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <>
+      <div className="hidden md:block">
+        <Header />
+      </div>
+      <div className="block md:hidden">
+        <Navbar />
+      </div>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      <section className="relative flex flex-col md:flex-row items-center justify-between px-5 md:px-30 bg-white overflow-hidden font-['Public_Sans']">
+        <div className="text-center md:text-left md:w-115 py-8 ml-9">        
+          <h1 className="text-4xl md:text-6xl font-light text-[hsl(233,26%,24%)] leading-tight">
+            Next Generation <br /> Digital Banking
+          </h1>
+          <p className="text-lg text-[hsl(233,8%,62%)] mt-5">
+            Take your financial life online. Your Easybank account will be a one-stop-shop for spending, saving, budgeting, investing and much more.
+          </p>
+          <button className="mt-8 px-6 py-3 rounded-full text-white bg-gradient-to-r from-[hsl(136,65%,51%)] to-[hsl(192,70%,51%)] hover:opacity-80 transition-opacity duration-300">
+            Request Invite
+          </button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=default-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+
+        <div className="relative w-full md:w-1/2 flex justify-center md:justify-end mt-10 md:mt-0 h-[600px] overflow-visible">  
+          <div className="absolute w-[150%] h-[200%] scale-150 top-[-150px] right-[-200px] w-full h-full">
+            <Image
+              src="/images/bg-intro-desktop.svg"
+              alt="Background Shape"
+              layout="fill"
+              objectFit="contain"
+              priority
+            />
+          </div>
+
+          <div className="absolute top-[-220px] right-[-500px] w-[90%] md:w-[120%] lg:w-[140%] z-10 overflow-visible">  
+            <Image
+              src="/images/image-mockups.png"
+              alt="Mockup Image"
+              layout="intrinsic"
+              width={700}
+              height={850}
+            />
+          </div>
+        </div>
+      </section>
+
+      <section className="text-left md:px-38 bg-gray-100 py-16 font-['Public_Sans']">
+        <h2 className="text-3xl md:text-4xl font-light text-[hsl(233,26%,24%)]">
+          Why choose Easybank?
+        </h2>
+        <p className="text-lg text-[hsl(233,8%,62%)] mt-5 max-w-3xl"> 
+          We leverage Open Banking to turn your bank account into your financial hub. 
+          Control your finances like never before.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mt-12 md:px-0">  
+          <div className="text-left">
+            <img src="/images/icon-online.svg" alt="Online Banking" className="mb-4" />
+            <h3 className="text-xl font-semibold text-[hsl(233,26%,24%)]">Online Banking</h3>
+            <p className="text-[hsl(233,8%,62%)] mt-2">
+              Our modern web and mobile applications allow you to keep track of your finances wherever you are in the world.
+            </p>
+          </div>
+
+          <div className="text-left">
+            <img src="/images/icon-budgeting.svg" alt="Simple Budgeting" className="mb-4" />
+            <h3 className="text-xl font-semibold text-[hsl(233,26%,24%)]">Simple Budgeting</h3>
+            <p className="text-[hsl(233,8%,62%)] mt-2">
+              See exactly where your money goes each month. Receive notifications when you're close to hitting your limits.
+            </p>
+          </div>
+
+          <div className="text-left">
+            <img src="/images/icon-onboarding.svg" alt="Fast Onboarding" className="mb-4" />
+            <h3 className="text-xl font-semibold text-[hsl(233,26%,24%)]">Fast Onboarding</h3>
+            <p className="text-[hsl(233,8%,62%)] mt-2">
+              We don’t do branches. Open your account in minutes online and start taking control of your finances right away.
+            </p>
+          </div>
+
+          <div className="text-left">
+            <img src="/images/icon-api.svg" alt="Open API" className="mb-4" />
+            <h3 className="text-xl font-semibold text-[hsl(233,26%,24%)]">Open API</h3>
+            <p className="text-[hsl(233,8%,62%)] mt-2">
+              Manage your savings, investments, pension, and much more from one account. Tracking your money has never been easier.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <LatestArticles />
+      <Footer />
+    </>
   );
 }
